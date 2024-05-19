@@ -6,13 +6,16 @@ import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import MailIcon from "../components/icons/MailIcon.astro";
+import Experience from "../components/Experience.astro";
+import Container from "../components/Container.astro";
+import BriefcaseIcon from "../components/icons/BriefcaseIcon.astro";
 ---
 
 <Layout
   title="SergioTech's Portfolio - Full Stack Web Developer with 4+ years of experience"
 >
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <Container class="py-40 pb-20">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
         Hey, I'm SergioTech <a
           href="https://linkedin.com/in/sergioherrerasaavedra"
@@ -37,6 +40,13 @@ import MailIcon from "../components/icons/MailIcon.astro";
           <MailIcon class="w-6 h-6" /> sergio@sergio-tech.com
         </SocialPill>
       </nav>
-    </section>
+    </Container>
+    <Container>
+      <h2 class="text-3xl font-bold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Professional Experience
+      </h2>
+      <Experience />
+    </Container>
   </main>
 </Layout>
