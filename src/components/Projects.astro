@@ -1,0 +1,83 @@
+---
+import HtmlIcon from "./icons/HtmlIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
+import JsIcon from "./icons/JsIcon.astro";
+import LiquidIcon from "./icons/LiquidIcon.astro";
+import SwiperIcon from "./icons/SwiperIcon.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-gray-200 text-black hover:scale-110",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-gray-200 text-black hover:scale-110",
+    icon: CssIcon,
+  },
+  JS: {
+    name: "Javascript",
+    class: "bg-gray-200 text-black hover:scale-110",
+    icon: JsIcon,
+  },
+  LIQUID: {
+    name: "Liquid",
+    class: "bg-gray-200 text-black hover:scale-110",
+    icon: LiquidIcon,
+  },
+  SWIPER: {
+    name: "Swiper",
+    class: "bg-gray-200 text-black hover:scale-110",
+    icon: SwiperIcon,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Account Page",
+    description:
+      "This custom account page features a sleek, tabbed menu interface designed to enhance user experience. This intuitive layout allows users to effortlessly access all their information from a single, unified page, making navigation smooth and efficient.",
+    link: "#",
+    github: "#",
+    image: "/images/Projects/custom-account-page.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.LIQUID],
+  },
+  {
+    title: "Testimonial Slider",
+    description:
+      "Custom testimonial slider, built using the Swiper library, offers a dynamic and engaging way to showcase user feedback. This responsive slider seamlessly integrates into any shopify store (after installing the library), providing smooth transitions and a visually appealing presentation of testimonials.",
+    link: "#",
+    github: "#",
+    image: "/images/Projects/custom-testimonial-slider.webp",
+    tags: [TAGS.SWIPER, TAGS.LIQUID],
+  },
+  {
+    title: "Quotation Checkout",
+    description:
+      'We modified the "Buy Now" button with JavaScript to send a WhatsApp message for quotation requests, tailoring the process to meet client-specific needs. This personalized approach allows for direct communication and customized service, ensuring a more responsive and customer-centric experience.',
+    link: "#",
+    github: "#",
+    image: "/images/Projects/quotation-checkout.webp",
+    tags: [TAGS.JS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article class="mt-10">
+      <h3 class="text-2xl font-semibold mb-2"> {title} </h3>
+      <p class="text-lg text-pretty mb-4"> {description}</p>
+      <ul class="flex  flex-row gap-x-4 gap-y-4 mb-4 flex-wrap">
+        {tags.map((tag) => (
+          <li
+            class={`flex gap-x-2 gap-y-2 rounded-full text-sm py-2 px-4 items-center ${tag.class}`}
+          >
+            <tag.icon class="size-4" /> {tag.name}
+          </li>
+        ))}
+      </ul>
+      <img src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+    </article>
+  ))
+}
