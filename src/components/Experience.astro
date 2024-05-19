@@ -1,0 +1,42 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Jan 2024 - Present",
+    title: "Prende Agency",
+    description:
+      "Shopify Expert agency that helps businesses design, create, personalize, and manage their Shopify stores.",
+    position: "Shopify Developer",
+    link: "https://prende.agency",
+    latest: true,
+  },
+  {
+    date: "Oct 2023 - Present",
+    title: "Berelvant",
+    description:
+      "Digital Marketing Agency that helps businesses succeed in the digital world.",
+    position: "Shopify Developer",
+    link: "https://berelvant.com",
+    latest: false,
+  },
+  {
+    date: "Apr 2020 - Present",
+    title: "Chapa Tu Web",
+    description:
+      "Chapa tu Web is a startup committed to empowering entrepreneurs by offering them a strong and influential digital presence.",
+    position: "Founder | Lead Developer",
+    link: "https://chapatuweb.com",
+    latest: false,
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
